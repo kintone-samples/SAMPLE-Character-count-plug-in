@@ -1,0 +1,38 @@
+{
+  "manifest_version": 1,
+  "version": 1,
+  "type": "APP",
+  "desktop": {
+    "js": [
+      "js/desktop.js"
+    ],
+    "css": [
+      "css/51-modern-default.css"
+    ]
+  },
+  "icon": "image/characters.png",
+  "config": {
+    "html": "html/config.html",
+    "js": [
+      "https://js.kintone.com/jquery/3.3.1/jquery.min.js",
+      "js/config.js"
+    ],
+    "css": [
+      "css/51-modern-default.css",
+      "css/config.css"
+    ],
+    "required_params": [
+      "body",
+      "count"
+    ]
+  },
+  "name": {
+    "en": "Character count plug-in"
+  },
+  "description": {
+    "en": "This sample code counts the total number of characters in a text field. Spaces in the text field are excluded from the count. The final count value is set into a number field."
+  },
+  "homepage_url": {
+    "en": "https://developer.kintone.io/hc/en-us/articles/115008120767"
+  }
+}
