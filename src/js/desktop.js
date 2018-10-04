@@ -9,7 +9,7 @@
 (function(PLUGIN_ID) {
     'use strict';
 
-    // Get plugin configuration settings
+    // Get plug-in configuration settings
     var CONFIG = kintone.plugin.app.getConfig(PLUGIN_ID);
     // Get each settings
     if (!CONFIG) {
