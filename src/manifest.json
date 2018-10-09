@@ -27,10 +27,10 @@
     ]
   },
   "name": {
-    "en": "Character count plug-in"
+    "en": "Character Count Plug-in"
   },
   "description": {
-    "en": "This sample code counts the total number of characters in a text area field. Spaces in the text area field are excluded from the count. The final count value is set into a number field."
+    "en": "This sample code counts the total number of characters in a Text Area field. Spaces in the Text Area field are excluded from the count. The final count value is set into a Number field."
   },
   "homepage_url": {
     "en": "https://developer.kintone.io/hc/en-us/articles/115008120767"
