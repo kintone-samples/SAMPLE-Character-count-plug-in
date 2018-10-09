@@ -47,7 +47,7 @@ jQuery.noConflict();
             $('#select_body_field').val(CONF.body);
             $('#select_count_field').val(CONF.count);
         }, function(resp) {
-            return alert('Failed to retrieve fields information');
+            return alert('Failed to retrieve field information');
         });
     }
     $(document).ready(function() {
