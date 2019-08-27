@@ -40,12 +40,12 @@ jQuery.noConflict();
           default:
             break;
         }
-        // Set default values
-        $selectBody.val(CONF.body);
-        $selectCount.val(CONF.count);
-      }, function(err) {
-        alert('Failed to retrieve field information');
       });
+      // Set default values
+      $selectBody.val(CONF.body);
+      $selectCount.val(CONF.count);
+    }, function(err) {
+      alert('Failed to retrieve field information');
     });
   }
   $(document).ready(function() {
