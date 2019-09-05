@@ -20,7 +20,8 @@ src/
 │        └──── config.css  
 ├── js/  
 │        ├──── config.js  
-│        └──── desktop.js  
+│        ├──── desktop.js  
+│        └──── kintone-config-helper.js  
 ├── image/  
 │        └──── characters.png  
 └── manifest.json  
