@@ -8,7 +8,6 @@ jQuery.noConflict();
 (function($, PLUGIN_ID) {
   'use strict';
   // Get configuration settings
-
   var CONF = kintone.plugin.app.getConfig(PLUGIN_ID);
 
   var $form = $('.js-submit-settings');
@@ -53,7 +52,7 @@ jQuery.noConflict();
     setDropDown();
     // Set input values when 'Save' button is clicked
     $form.on('submit', function(e) {
-      var config = [];
+      var config = {};
       e.preventDefault();
 
       config.body = $selectBody.val();
