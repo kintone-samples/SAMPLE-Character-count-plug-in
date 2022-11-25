@@ -1,6 +1,6 @@
 {
   "manifest_version": 1,
-  "version": 1,
+  "version": "1.0.2",
   "type": "APP",
   "desktop": {
     "js": [
@@ -34,6 +34,6 @@
     "en": "This sample code counts the total number of characters in a Text Area field. Spaces in the Text Area field are excluded from the count. The final count value is set into a Number field."
   },
   "homepage_url": {
-    "en": "https://developer.kintone.io/hc/en-us/articles/360010158273"
+    "en": "https://kintone.dev/en/plugins/simple-samples/character-count-plug-in/"
   }
 }
