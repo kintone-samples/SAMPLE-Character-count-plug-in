@@ -10,23 +10,21 @@
   'use strict';
 
   // Get plug-in configuration settings
-  var CONFIG = kintone.plugin.app.getConfig(PLUGIN_ID);
-  var CONFIG_BODY, CONFIG_COUNT;
+  const CONFIG = kintone.plugin.app.getConfig(PLUGIN_ID);
 
   // Get each settings
   if (!CONFIG) {
     return false;
   }
 
-  CONFIG_BODY = CONFIG.body;
-  CONFIG_COUNT = CONFIG.count;
+  const CONFIG_BODY = CONFIG.body;
+  const CONFIG_COUNT = CONFIG.count;
 
   kintone.events.on(['app.record.create.submit', 'app.record.edit.submit', 'app.record.index.edit.submit'],
     function(event) {
       // Obtain characters in the text field
-      var rec = event.record;
-      var st = rec[CONFIG_BODY].value;
-      var st2;
+      const rec = event.record;
+      const st = rec[CONFIG_BODY].value;
 
       // If the number of characters is zero, put zero in number field and return
       if (!st) {
@@ -35,7 +33,7 @@
       }
 
       // Remove spaces
-      st2 = st.replace(/\s+/g, '');
+      const st2 = st.replace(/\s+/g, '');
 
       // Enter character count into number field
       rec[CONFIG_COUNT].value = st2.length;

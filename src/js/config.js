@@ -8,12 +8,12 @@ jQuery.noConflict();
 (function($, PLUGIN_ID) {
   'use strict';
   // Get configuration settings
-  var CONF = kintone.plugin.app.getConfig(PLUGIN_ID);
+  const CONF = kintone.plugin.app.getConfig(PLUGIN_ID);
 
-  var $form = $('.js-submit-settings');
-  var $cancelButton = $('.js-cancel-button');
-  var $selectBody = $('select[name="js-select_body_field"]');
-  var $selectCount = $('select[name="js-select_count_field"]');
+  const $form = $('.js-submit-settings');
+  const $cancelButton = $('.js-cancel-button');
+  const $selectBody = $('select[name="js-select_body_field"]');
+  const $selectCount = $('select[name="js-select_count_field"]');
 
   function escapeHtml(htmlstr) {
     return htmlstr.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -22,9 +22,13 @@ jQuery.noConflict();
 
   function setDropDown() {
     // Retrieve field information, then set drop-down
-    return KintoneConfigHelper.getFields(['MULTI_LINE_TEXT', 'NUMBER']).then(function(resp) {
-      resp.forEach(function(respField) {
-        var $option = $('<option>');
+    return kintone.app.getFormFields().then((resp) => {
+      for (const key in resp) {
+        if (!resp.hasOwnProperty(key)) {
+          continue;
+        }
+        const respField = resp[key];
+        const $option = $('<option>');
         switch (respField.type) {
           case 'MULTI_LINE_TEXT':
             $option.attr('value', respField.code);
@@ -39,12 +43,12 @@ jQuery.noConflict();
           default:
             break;
         }
-      });
+      }
       // Set default values
       $selectBody.val(CONF.body);
       $selectCount.val(CONF.count);
-    }, function(err) {
-      alert('Failed to retrieve field information');
+    }).catch((err) => {
+      return alert('Failed to retrieve field information');
     });
   }
   $(document).ready(function() {
@@ -52,7 +56,7 @@ jQuery.noConflict();
     setDropDown();
     // Set input values when 'Save' button is clicked
     $form.on('submit', function(e) {
-      var config = {};
+      const config = {};
       e.preventDefault();
 
       config.body = $selectBody.val();
